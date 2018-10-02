@@ -123,7 +123,7 @@ module.exports = (env, options) => {
         },
 
         {
-          test: /\.(eot|ttf|woff|woff2)$/i,
+          test: /\.(eot|ttf|woff|woff2|otf)$/i,
           use: {
             loader: 'file-loader',
             options: {
