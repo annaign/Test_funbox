@@ -9,81 +9,93 @@
 </head>
 
 <body>
-  <!-- button сделан только из-за для поддержки вертикального центрирования в IE11 -->
-  <button class="main">
+  <div class="main">
 
     <div class="main__cat-food">
       <h2 class="cat-food__header">Ты сегодня покормил кота?</h2>
 
-      <div class="cat-food__container">
-        <div class="cat-food__checkbox">
-          <div class="cat-food__product">
-            <svg class="cat-food__product-border" width="320" height="480"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 480">
-              <path d="M58,2 h250 a10,10 0 0 1 10,10 v456 a10,10 0 0 1 -10,10 h-296 a10,10 0 0 1 -10,-10 v-410 z" />
+      <form class="cat-food__form">
+
+        <input type="checkbox" id="prod1" class="cat-food__input" />
+        <div class="cat-food__product">
+          <label class="product" for="prod1">
+            <svg class="product__border product__border-default" width="320"
+              height="480" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 480">
+              <path class="js-productChecker" d="M58,2 h250 a10,10 0 0 1 10,10 v456 a10,10 0 0 1 -10,10 h-296 a10,10 0 0 1 -10,-10 v-410 z" />
             </svg>
-            <div class="product">
-              <p class="product__text">Сказочное заморское яство</p>
+            <div class="product__text">
+              <p class="product__text-top">Сказочное заморское яство</p>
               <h3 class="product__header">Нямушка</h3>
               <p class="product__header-after">с фуа-гра</p>
-              <p class="product__text product__text-small">10 порций<br />мышь
+              <p class="product__text-bottom">10 порций<br />мышь
                 в подарок</p>
             </div>
-            <div class="product__weight"><span class="product__weight-num">0,5</span><span
-                lass="product__weight-unit">кг</span></div>
+            <div class="product__weight product__weight-default"><span class="product__weight-num">0,5</span><span
+                class="product__weight-unit">кг</span>
+            </div>
+          </label>
+          <div class="product__text-after">Чего сидишь? Порадуй котэ, <span
+              class="js-productChecker product__text-after-link">купи</span><span
+              class="product__text-after-point">.</span>
           </div>
-          <p class="product__text-after">Чего сидишь? Порадуй котэ,
-            <span class="product__text-after-blue product__text-after-dashed">купи</span>
-            <span class="product__text-after-blue">.</span></p>
+          <div class="product__text-after hideBlock">Печень утки
+            разварная с артишоками.</div>
         </div>
 
-        <div class="cat-food__checkbox">
-          <div class="cat-food__product">
-            <svg class="cat-food__product-border" width="320" height="480"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 480">
-              <path d="M58,2 h250 a10,10 0 0 1 10,10 v456 a10,10 0 0 1 -10,10 h-296 a10,10 0 0 1 -10,-10 v-410 z" />
+        <input type="checkbox" id="prod2" class="cat-food__input" />
+        <div class="cat-food__product">
+          <label class="product product__checked" for="prod2">
+            <svg class="product__border product__border-default" width="320"
+              height="480" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 480">
+              <path class="js-productChecker" d="M58,2 h250 a10,10 0 0 1 10,10 v456 a10,10 0 0 1 -10,10 h-296 a10,10 0 0 1 -10,-10 v-410 z" />
             </svg>
-            <div class="product">
-              <p class="product__text">Сказочное заморское яство</p>
+            <div class="product__text">
+              <p class="product__text-top">Сказочное заморское яство</p>
               <h3 class="product__header">Нямушка</h3>
               <p class="product__header-after">с рыбой</p>
-              <p class="product__text product__text-small">40 порций<br />2
-                мыши
-                в подарок</p>
+              <p class="product__text-bottom">40 порций<br />2 мыши в подарок</p>
             </div>
-            <div class="product__weight"><span class="product__weight-num">2</span><span
-                lass="product__weight-unit">кг</span></div>
+            <div class="product__weight product__weight-default"><span class="product__weight-num">2</span><span
+                class="product__weight-unit">кг</span>
+            </div>
+          </label>
+          <div class="product__text-after">Чего сидишь? Порадуй котэ,
+            <span class="js-productChecker product__text-after-link">купи</span><span
+              class="product__text-after-point">.</span>
           </div>
-          <p class="product__text-after">Чего сидишь? Порадуй котэ,
-            <span class="product__text-after-blue product__text-after-dashed">купи</span>
-            <span class="product__text-after-blue">.</span></p>
+          <div class="product__text-after hideBlock">Головы щучьи с чесноком да свежайшая
+            сёмгушка.</div>
         </div>
 
-        <div class="cat-food__checkbox">
-          <div class="cat-food__product">
-            <svg class="cat-food__product-border" width="320" height="480"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 480">
-              <path d="M58,2 h250 a10,10 0 0 1 10,10 v456 a10,10 0 0 1 -10,10 h-296 a10,10 0 0 1 -10,-10 v-410 z" />
+        <input type="checkbox" id="prod3" class="cat-food__input" />
+        <div class="cat-food__product">
+          <label class="product product__disabled" for="prod3">
+            <svg class="product__border product__border-default" width="320"
+              height="480" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 480">
+              <path class="js-productChecker" d="M58,2 h250 a10,10 0 0 1 10,10 v456 a10,10 0 0 1 -10,10 h-296 a10,10 0 0 1 -10,-10 v-410 z" />
             </svg>
-            <div class="product">
-              <p class="product__text">Сказочное заморское яство</p>
+            <div class="product__text">
+              <p class="product__text-top">Сказочное заморское яство</p>
               <h3 class="product__header">Нямушка</h3>
               <p class="product__header-after">с курой</p>
-              <p class="product__text product__text-small">100 порций<br />5
-                мышей в подарок<br />заказчик доволен</p>
+              <p class="product__text-bottom">100 порций<br />5 мышей в
+                подарок<br />заказчик доволен</p>
             </div>
-            <div class="product__weight"><span class="product__weight-num">5</span><span
-                lass="product__weight-unit">кг</span></div>
+            <div class="product__weight product__weight-default"><span class="product__weight-num">5</span><span
+                class="product__weight-unit">кг</span></div>
+          </label>
+          <div class="product__text-after">Чего сидишь? Порадуй котэ, <span
+              class="js-productChecker product__text-after-link">купи</span><span
+              class="product__text-after-point">.</span>
           </div>
-          <p class="product__text-after">Чего сидишь? Порадуй котэ,
-            <span class="product__text-after-blue product__text-after-dashed">купи</span>
-            <span class="product__text-after-blue">.</span></p>
+          <div class="product__text-after hideBlock">Филе из цыплят с трюфелями
+            в бульоне.</div>
         </div>
 
-      </div>
+      </form>
     </div>
 
-  </button>
+  </div>
 </body>
 
 </html>

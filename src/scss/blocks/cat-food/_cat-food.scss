@@ -1,14 +1,6 @@
-// $separator_min: calc((100vw - 320px) / 4);
-// $separator_mid: calc(((100vw - 2 * 320px) / 3) / 2);
-// $separator_max: calc(((100vw - 3 * 320px) / 4) / 2);
-
 .cat-food {
-  &__container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  &__product {
+    margin-top: 15px;
   }
 
   &__header {
@@ -19,49 +11,15 @@
     color: white;
   }
 
-  &__checkbox {
-    width: $width_product;
-
-    @media only screen and (min-width: $width-min + 160px) {
-      & {
-        margin-left: 80px;
-        margin-right: 80px;
-      }
-    }
-
-    // @media only screen and (min-width: $width-mid) {
-    //   & {
-    //     margin-left: $separator_mid;
-    //     margin-right: $separator_mid;
-    //   }
-    // }
-
-    // @media only screen and (min-width: $width-max) {
-    //   & {
-    //     margin-left: $separator_max;
-    //     margin-right: $separator_max;
-    //   }
-    // }
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  &__product {
-    position: relative;
-    width: $width_product;
-    height: 480px;
-    background-image: url('../../../img/bg_cat.png'),
-      linear-gradient(135deg, transparent 45px, #f2f2f2 0);
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    border-radius: 12px;
-    text-align: left;
-
-    &-border {
-      position: absolute;
-      top: 0;
-      left: 0;
-      fill: transparent;
-      stroke: $color-product-default;
-      stroke-width: 5;
-    }
+  &__input {
+    display: none;
   }
 }
