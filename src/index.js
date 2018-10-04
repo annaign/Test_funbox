@@ -9,6 +9,8 @@ const arrClassNames = [
   'product__text-after-point'
 ];
 
+var timeIdHover;
+
 const HeightMiddle = () => {
   const clientHeight = document.documentElement.clientHeight;
   const mainBlock_Height = document.querySelector('.main').clientHeight;
@@ -38,6 +40,9 @@ const CheckProduct = event => {
     return;
   }
 
+  //Если клик во время изменения цвета после mouseout, то прервать и не менять классы в HoverProduct
+  clearTimeout(timeIdHover);
+
   const productLabel = event.currentTarget.querySelector('.product');
   const arrTextAfter = event.currentTarget.querySelectorAll(
     '.product__text-after'
@@ -58,18 +63,6 @@ const CheckProduct = event => {
 
     AddClass(productLabel.parentNode, 'checked', 2);
   }
-  //не поддерживает IE 11
-  // if (productLabel.classList.contains('product__checked')) {
-  //   productLabel.classList.remove('product__checked');
-  //   for (let i = 0; i < arrTextAfter.length; i++) {
-  //     arrTextAfter[i].classList.toggle('hideBlock');
-  //   }
-  // } else {
-  //   productLabel.classList.add('product__checked');
-  //   for (let i = 0; i < arrTextAfter.length; i++) {
-  //     arrTextAfter[i].classList.toggle('hideBlock');
-  //   }
-  // }
 };
 
 const HoverProduct = event => {
@@ -93,13 +86,13 @@ const HoverProduct = event => {
   if (classList.indexOf('product__checked') !== -1) {
     AddClass(productLabel.parentNode, 'checked-hover', 2);
 
-    setTimeout(() => {
+    timeIdHover = setTimeout(() => {
       AddClass(productLabel.parentNode, 'checked', 2);
     }, 500);
   } else {
     AddClass(productLabel.parentNode, 'hover', 4);
 
-    setTimeout(() => {
+    timeIdHover = setTimeout(() => {
       AddClass(productLabel.parentNode, 'default', 4);
     }, 500);
   }
