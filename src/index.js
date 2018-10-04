@@ -1,4 +1,5 @@
 import './scss/style.scss';
+import MobileDetect from 'mobile-detect';
 
 //базовые классы
 const arrClassNames = [
@@ -30,13 +31,14 @@ const CheckProduct = event => {
     // !event.target.classList.contains('js-productChecker')
     //для IE 11
     event.target.className === 'product__text-after' ||
-    event.target.className === 'product__text-after-point'
+    event.target.className === 'product__text-after-point' ||
+    event.target.className ===
+      'product__text-after-point product__text-after-point-hover'
   ) {
     return;
   }
 
   const productLabel = event.currentTarget.querySelector('.product');
-  const productInput = document.getElementById(productLabel.htmlFor);
   const arrTextAfter = event.currentTarget.querySelectorAll(
     '.product__text-after'
   );
@@ -59,13 +61,11 @@ const CheckProduct = event => {
   //не поддерживает IE 11
   // if (productLabel.classList.contains('product__checked')) {
   //   productLabel.classList.remove('product__checked');
-  //   productInput.checked = false;
   //   for (let i = 0; i < arrTextAfter.length; i++) {
   //     arrTextAfter[i].classList.toggle('hideBlock');
   //   }
   // } else {
   //   productLabel.classList.add('product__checked');
-  //   productInput.checked = true;
   //   for (let i = 0; i < arrTextAfter.length; i++) {
   //     arrTextAfter[i].classList.toggle('hideBlock');
   //   }
@@ -82,7 +82,9 @@ const HoverProduct = event => {
     // !event.target.classList.contains('js-productChecker')
     //для IE 11
     event.target.className === 'product__text-after' ||
-    event.target.className === 'product__text-after-point'
+    event.target.className === 'product__text-after-point' ||
+    event.target.className ===
+      'product__text-after-point product__text-after-point-hover'
   ) {
     return;
   }
@@ -178,9 +180,14 @@ document.addEventListener('DOMContentLoaded', () => {
     arrProductParent[i].addEventListener('click', CheckProduct);
   }
 
-  const arrProduct = document.querySelectorAll('.product');
+  const md = new MobileDetect(window.navigator.userAgent);
 
-  for (let i = 0; i < arrProduct.length; i++) {
-    arrProduct[i].addEventListener('mouseout', HoverProduct);
+  //Если не мобильное устройство, то подключаем ховеры
+  if (!md.mobile()) {
+    const arrProduct = document.querySelectorAll('.product');
+
+    for (let i = 0; i < arrProduct.length; i++) {
+      arrProduct[i].addEventListener('mouseout', HoverProduct);
+    }
   }
 });
