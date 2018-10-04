@@ -16,6 +16,7 @@ $separator_max: calc(((100vw - 3 * 320px) / 4) / 2);
   border-radius: 12px;
   text-align: left;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   &__border {
     position: absolute;
