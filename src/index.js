@@ -44,16 +44,12 @@ const CheckProduct = event => {
   //для IE 11
   const classList = productLabel.className.split(' ');
   if (classList.indexOf('product__checked') !== -1) {
-    productInput.checked = false;
-
     productLabel.className = 'product';
     arrTextAfter[0].className = 'product__text-after';
     arrTextAfter[1].className = 'product__text-after hideBlock';
 
     AddClass(productLabel.parentNode, 'default', 2);
   } else {
-    productInput.checked = true;
-
     productLabel.className = 'product product__checked';
     arrTextAfter[0].className = 'product__text-after hideBlock';
     arrTextAfter[1].className = 'product__text-after';
