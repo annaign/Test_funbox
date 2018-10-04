@@ -102,7 +102,7 @@ module.exports = (env, options) => {
             {
               loader: 'file-loader',
               options: {
-                name: '[name].[hash].[ext]',
+                name: '[name].[ext]',
                 outputPath: 'images/'
               }
             }
@@ -127,7 +127,7 @@ module.exports = (env, options) => {
           use: {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]',
+              name: '[name].[ext]',
               outputPath: 'fonts/'
             }
           }
